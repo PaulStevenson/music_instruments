@@ -5,15 +5,10 @@ const InstrumentView = require('./views/instrument_view.js');
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
 
-  constselectElement = document.querySelector('select#instrument-families');
+  const selectElement = document.querySelector('select#instrument-families');
   const instrumentFamily = new SelectView(selectElement);
   console.log(instrumentFamily);
   instrumentFamily.showAllInstruments();
-  console.log(instrumentFamily);
-
-
-
-
 
 
 });

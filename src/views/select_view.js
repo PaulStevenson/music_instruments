@@ -10,12 +10,13 @@ SelectView.prototype.showAllInstruments = function () {
         console.log(showAllInstruments);
         this.populate(allInstruments);
     });
+
+    this.element.addEventListener('change', (event) => {
+        const selectIndex = event.target.value;
+        PubSub.publish('SelectView:change', selectedIndex);
+    });
 };
 
-this.element.addEventListener('change,' (event) => {
-    const selectIndex = event.target.value;
-    PubSub.publish('SelectView:change', selectedIndex);
-});
 
 SelectView.prototype.populateDropdown = function (instrumentFamilyData) {
     instrumentFamilyData.forEach((instrumentFamily, index) => {
@@ -26,4 +27,4 @@ SelectView.prototype.populateDropdown = function (instrumentFamilyData) {
     });
 };
 
-module.exports = InstrumentFamilies;
+module.exports = SelectView;
