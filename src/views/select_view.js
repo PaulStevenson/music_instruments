@@ -2,13 +2,14 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const SelectView = function (element) {
     this.element = element;
+    console.log(element);
 };
 
 SelectView.prototype.showAllInstruments = function () {
     PubSub.subscribe('Instruments:all-instruments-ready', (event) => {
         const showAllInstruments = event.detail;
-        console.log(showAllInstruments);
         this.populate(allInstruments);
+        console.log(allInstruments);
     });
 
     this.element.addEventListener('change', (event) => {

@@ -34,7 +34,7 @@ const InstrumentFamilies = function() {
 
         PubSub.subscribe('SelectView:change', (event) => {
             const selectedIndex = event.detail;
-            this.publishAnimalDetail(selectedIndex);
+            this.publishFamily(selectedIndex);
         });
     };
 
